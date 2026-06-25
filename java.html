@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Java Documentation</title>
+    </head>
+    <body>
+        <header>
+            <h1>Javasprict museaum</h1>
+        </header>
+        <section>
+            <div class="第2章 HTML, CSS, JS基本2 OKボタンを作ってみよう">
+                <h2>第2章 HTML, CSS, JS基本2 OKボタンを作ってみよう</h2>
+                <form>
+                    <input type="button" id="okBtn" value="OK" onclick="okOnButtonClick();">
+                </form>
+                <script>
+                    function okOnButtonClick() {
+                        alert("OK button clicked!");
+                    }
+                </script>
+            </div>
+            <div class="C2B22">
+                <h2>文字の置き換えボタンを作ってみよう</h2>
+                <form>
+                    <input type="button" id="cBtn" value="戦時下にする" onclick="cOnButtonClick();">
+                </form>
+                <p>今は<span id="hoge">平時</span>です。<span id="hoge2">安心して暮らしてください。</span></p>
+                <script>
+                    function cOnButtonClick (){
+                        alert("country is now in War")
+                        document.getElementById("hoge").innerHTML="戦時下";
+                        document.getElementById("hoge2").innerHTML="戦争に備えてください。";
+                    }
+                </script>
+            </div>
+            <div class="C2B23">
+                <h2>いくつかのボタン！</h2>
+                <form>
+                    <input type="button" value="peace" onclick="peace();"/>
+                    <input type="button" value="inwar_attacking" onclick="attacking();"/>
+                    <input type="button" value="inwar_brocking" onclick="defending();"/>
+                </form>
+                <p>今国家は<span id="target">平時</span>です。わが軍は<span id="status">待機中</span>です。<span id="target1">安全な毎日をお過ごしください</span>ください。</p>
+                <script>
+                    function peace(){
+                        document.getElementById("target").textContent = "平時"
+                        document.getElementById("status").textContent="待機中";
+                        document.getElementById("target1").textContent="安全な毎日をお過ごし";
+                        document.getElementById("target").style.color = "green";
+                    }
+                    function attacking(){
+                        document.getElementById("target").textContent = "戦時下"
+                        document.getElementById("status").textContent="攻撃中";
+                        document.getElementById("target1").textContent="おうえんしてあげて";
+                        document.getElementById("target").style.color = "red";
+                    }
+                    function defending(){
+                        document.getElementById("target").textContent = "戦時下、防衛中"
+                        document.getElementById("status").textContent="防衛しているところ";
+                        document.getElementById("target1").textContent="敵軍の砲撃にご注意して";
+                        document.getElementById("target").style.color = "red";
+                    }
+                </script>
+            </div>
+            <div class="C3B31">
+                <h2>箱の色を変える。</h2>
+                <form>
+                    <input type="button" value="black" onclick="drop();"/>
+                </form>
+                <p>今日は、<span id="daylike">何もない</span>日です。<span id="tt1">何の色の服を着て出てもよいです。</span></p>
+                <div class="box" id="box"></div>
+                <style>
+                    .box{
+                        width: 50px;
+                        height: 50px;
+                        background-color: rgb(255, 0, 0);
+                    }
+                </style>
+                <script>
+                    function drop(){
+                        document.getElementById("box").style.backgroundColor = "black";
+                        document.getElementById("daylike").innerHTML = "国葬";
+                        document.getElementById("tt1").innerHTML = "この色の服を着て外出しましょう。";
+                    }
+                </script>
+            </div>
+            <div class="C3B32">
+                <h2>ボタンで箱の位置変えてみる？</h2>
+                <form>
+                    <input type="button" value="↑" onclick="up();">
+                    <input type="button" value="→" onclick="right();">
+                    <input type="button" value="↓" onclick="down();">
+                    <input type="button" value="←" onclick="left();">
+                </form>
+                <div class="box" id="box2"></div>
+                <style>
+                    .box2{
+                        width: 50px;
+                        height: 50px;
+                        background-color: rgb(255, 0, 0);
+                        position: fixed;
+                        top: 150px;
+                        left: 10px;
+                    }
+                </style>
+                <script>
+                    var x=10;
+                    var y=150;
+
+                    function right(){
+                        X=x+10;/*x座標を10増やす*/
+                        document.getElementById("box2").style.left=x+"px";
+                    }
+
+                    function left(){
+                        X=x-10;/*x座標を10減らす*/
+                        document.getElementById("box2").style.left=x+"px";
+                    }
+
+                    function up(){
+                        y=y - 10;/*y座標を10減らす*/
+                        document.getElementById("box2").style.top= y + "px";
+                    }
+
+                    function down(){
+                        y=y+10;/*y座標を10増やす*/
+                        document.getElementById("box2").style.top =y + "px";11
+                    }
+                </script>
+            </div>
+        </section>
+    </body>
+</html>
